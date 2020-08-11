@@ -13,12 +13,11 @@ void ShowList(node_t* head, int quantityOfRow, int quantityOfClmn);
 
 void CreateLists(int quantityOfRow, int quantityOfClmn)
 {
-    int totalList = quantityOfRow * quantityOfClmn;
     node_t* head = NULL;
     head = (node_t*)malloc(sizeof(node_t));
     head->next = NULL;
     node_t* pointer = head;
-    
+	int totalList = quantityOfRow * quantityOfClmn;
     if (totalList != 0)
     {
         printf("insert numbers \n");
@@ -41,7 +40,6 @@ void ShowList(node_t* head,int quantityOfRow,int quantityOfClmn)
 {
     int total = quantityOfRow * quantityOfClmn;
     node_t* pointer = head;
-
     printf("Your numbers \n");
     int i = 0;
     while(pointer->next != NULL)
@@ -51,9 +49,9 @@ void ShowList(node_t* head,int quantityOfRow,int quantityOfClmn)
             printf("\n");
             i = 0;
         }
-            printf("%d",pointer->number);
-            pointer = pointer->next;
-            i++;
+		printf("%d",pointer->number);
+		pointer = pointer->next;
+		i++;
     }
 }
 int main()
@@ -61,11 +59,9 @@ int main()
     int quantityOfRow;
     printf("Enter quantityOfRow \n");
     scanf("%d", &quantityOfRow);
-
     int quantityOfClmn;
     printf("Enter quantityOfClmn \n");
     scanf(" %d", &quantityOfClmn);
-
     CreateLists(quantityOfRow, quantityOfClmn);
 }
 
