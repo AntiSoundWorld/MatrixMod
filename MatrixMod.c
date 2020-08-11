@@ -13,14 +13,14 @@ void ShowList(node_t* head, int quantityOfRow, int quantityOfClmn);
 
 void CreateLists(int quantityOfRow, int quantityOfClmn)
 {
-    node_t* head = NULL;
-    head = (node_t*)malloc(sizeof(node_t));
-    head->next = NULL;
-    node_t* pointer = head;
+	node_t* head = NULL;
+	head = (node_t*)malloc(sizeof(node_t));
+	head->next = NULL;
+	node_t* pointer = head;
 	int totalList = quantityOfRow * quantityOfClmn;
 	printf("insert numbers \n");
 	for (int i = 0; i < totalList; i++)
-	{
+	{ 
 		pointer->id = i;
 		pointer->number;
 		scanf("%d", &pointer->number);
