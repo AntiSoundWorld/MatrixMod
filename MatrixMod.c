@@ -8,7 +8,7 @@ typedef struct node
     struct node* next;    
 }node_t;
 
-void CreateLists(int  quantityOfRow , int quantityOfClmn);
+void CreateLists(int quantityOfRow, int quantityOfClmn);
 void ShowList(node_t* head, int quantityOfRow, int quantityOfClmn);
 
 void CreateLists(int quantityOfRow, int quantityOfClmn)
@@ -36,9 +36,8 @@ void CreateLists(int quantityOfRow, int quantityOfClmn)
     }
     ShowList(head, quantityOfRow, quantityOfClmn);
 }
-void ShowList(node_t* head,int quantityOfRow,int quantityOfClmn)
+void ShowList(node_t* head, int quantityOfRow, int quantityOfClmn)
 {
-    int total = quantityOfRow * quantityOfClmn;
     node_t* pointer = head;
     printf("Your numbers \n");
     int i = 0;
