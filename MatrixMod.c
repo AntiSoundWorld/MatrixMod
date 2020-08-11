@@ -1,22 +1,15 @@
-// ConsoleApplication2.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
 #include <stdlib.h>
 #include <stdio.h>
-
-
 
 typedef struct node
 {
     int id;
     int number;
-    struct node* next;
-    
+    struct node* next;    
 }node_t;
+
 void CreateLists(int  quantityOfRow , int quantityOfClmn);
 void ShowList(node_t* head, int quantityOfRow, int quantityOfClmn);
-
-
 
 void CreateLists(int quantityOfRow, int quantityOfClmn)
 {
