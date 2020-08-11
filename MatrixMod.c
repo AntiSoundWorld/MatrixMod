@@ -18,22 +18,16 @@ void CreateLists(int quantityOfRow, int quantityOfClmn)
     head->next = NULL;
     node_t* pointer = head;
 	int totalList = quantityOfRow * quantityOfClmn;
-    if (totalList != 0)
-    {
-        printf("insert numbers \n");
-        for (int i = 0; i < totalList; i++)
-        {
-            pointer->id = i;
-            pointer->number;
-            scanf("%d", &pointer->number);
-            if (pointer->next == NULL)
-            {
-                pointer->next = (node_t*)malloc(sizeof(node_t));
-                pointer->next->next = NULL;
-                pointer = pointer->next;
-            }
-        }
-    }
+	printf("insert numbers \n");
+	for (int i = 0; i < totalList; i++)
+	{
+		pointer->id = i;
+		pointer->number;
+		scanf("%d", &pointer->number);
+		pointer->next = (node_t*)malloc(sizeof(node_t));
+		pointer->next->next = NULL;
+		pointer = pointer->next;
+	}
     ShowList(head, quantityOfRow, quantityOfClmn);
 }
 void ShowList(node_t* head, int quantityOfRow, int quantityOfClmn)
