@@ -8,38 +8,36 @@ typedef struct node
     struct node* next;    
 }node_t;
 
-void CreateLists(int quantityOfRow, int quantityOfСolumns);
-void ShowList(node_t* head, int quantityOfRow, int quantityOfСolumns);
+int CreateLists(int quantityOfRows, int quantityOfСolumns);
+void ShowList(node_t* head, int quantityOfRows, int quantityOfСolumns);
 
-void CreateLists(int quantityOfRow, int quantityOfСolumns)
+int CreateLists(int quantityOfRows, int quantityOfСolumns)
 {
-	node_t* head = NULL;
-	head = (node_t*)malloc(sizeof(node_t));
-	head->next = NULL;
-	
-	node_t* pointer = head;
-	
-	int totalList = quantityOfRow * quantityOfСolumns;
+	int totalList = quantityOfRows * quantityOfСolumns;
 	printf("insert numbers \n");
 	if(totalList == 0)
 	{
-		printf("%d * %d = 0! Mamkin SCHETOVOD! \n",quantityOfRow, quantityOfСolumns );
+		printf("%d * %d = 0! Mamkin SCHETOVOD! \n", quantityOfRows, quantityOfСolumns );
+		return 1;
 	}
-	else
-	{
-		for (int i = 0; i < totalList; i++)
-		{ 
-			pointer->id = i;
-			pointer->number;
-			scanf("%d", &pointer->number);
-			pointer->next = (node_t*)malloc(sizeof(node_t));
-			pointer->next->next = NULL;
-			pointer = pointer->next;
-		}
-		ShowList(head, quantityOfRow, quantityOfСolumns);
+	node_t* head = NULL;
+	head = (node_t*)malloc(sizeof(node_t));
+	head->next = NULL;
+
+	node_t* pointer = head;
+	for (int i = 0; i < totalList; i++)
+	{ 
+		pointer->id = i;
+		pointer->number;
+		scanf("%d", &pointer->number);
+		pointer->next = (node_t*)malloc(sizeof(node_t));
+		pointer->next->next = NULL;
+		pointer = pointer->next;
 	}
+	ShowList(head, quantityOfRows, quantityOfСolumns);
+	return 0;
 }
-void ShowList(node_t* head, int quantityOfRow, int quantityOfСolumns)
+void ShowList(node_t* head, int quantityOfRows, int quantityOfСolumns)
 {
     node_t* pointer = head;
     printf("Your numbers \n");
@@ -58,14 +56,14 @@ void ShowList(node_t* head, int quantityOfRow, int quantityOfСolumns)
 }
 int main()
 {
-    int quantityOfRow;
-    printf("Enter quantityOfRow \n");
-    scanf("%d", &quantityOfRow);
+    int quantityOfRows;
+    printf("Enter quantityOfRows \n");
+    scanf("%d", &quantityOfRows);
 	
     int quantityOfСolumns;
     printf("Enter quantityOfСolumns \n");
     scanf(" %d", &quantityOfСolumns);
 	
-    CreateLists(quantityOfRow, quantityOfСolumns);
+    CreateLists(quantityOfRows, quantityOfСolumns);
 }
 
